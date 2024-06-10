@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Navbar />
       <Contact />
       <Footer />
     </div>
