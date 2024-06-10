@@ -1,0 +1,233 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  ul,
+  ol {
+    margin: 0;
+  }
+  
+  ul li,
+  ol li {
+    list-style: none;
+  }
+  
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .bg-img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .bg-transparent {
+    background-color: transparent !important;
+  }
+  
+  .classy-nav-container {
+    position: relative;
+    z-index: 100;
+    background-color: #ffffff;
+  }
+  
+  .classy-nav-container * {
+    box-sizing: border-box;
+  }
+  
+  .classy-nav-container a {
+    transition-duration: 500ms;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #232323;
+    display: inline-block;
+  }
+  
+  .classy-nav-container a:hover,
+  .classy-nav-container a:focus {
+    transition-duration: 500ms;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1abc9c;
+  }
+  
+  .classy-nav-container.classy-sticky {
+    position: fixed;
+    z-index: 1010;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  .classy-nav-container.box-skins .classynav > ul > li {
+    background-color: #1abc9c;
+  }
+  
+  .classy-nav-container.box-skins .classynav > ul > li > a {
+    color: #fff;
+  }
+  
+  .justify-content-between {
+    justify-content: space-between;
+  }
+  
+  .justify-content-center {
+    justify-content: center;
+  }
+  
+  .classy-navbar {
+    width: 100%;
+    height: 70px;
+    padding: 0.5em 2em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .classy-navbar .nav-brand {
+    font-size: 26px;
+    font-weight: 500;
+    color: #565656;
+    display: inline-block;
+    margin-right: 30px;
+  }
+  
+  .classy-navbar .nav-brand:focus,
+  .classy-navbar .nav-brand:hover {
+    font-size: 26px;
+    font-weight: 500;
+  }
+  
+  .classynav ul li {
+    display: inline-block;
+    clear: both;
+    position: inherit;
+    z-index: 10;
+  }
+  
+  .classynav ul li.cn-dropdown-item {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .classynav ul li.cn-dropdown-item ul li {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .classynav ul li ul li {
+    display: block;
+  }
+  
+  .classynav ul li ul li a {
+    padding: 0 20px;
+  }
+  
+  .classynav ul li a {
+    padding: 0 12px;
+    display: block;
+    height: 35px;
+    font-size: 14px;
+    line-height: 34px;
+  }
+  
+  .classynav ul li .megamenu li a {
+    padding: 0 12px;
+  }
+  
+  .classynav ul li div.single-mega a {
+    height: auto;
+    line-height: 1;
+  }
+  
+  .breakpoint-off .classynav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .breakpoint-off .classynav ul li .dropdown {
+    width: 180px;
+    position: absolute;
+    background-color: #ffffff;
+    top: 120%;
+    left: 0;
+    z-index: 100;
+    height: auto;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    transition-duration: 300ms;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .classy-navbar {
+      padding: 0.5em 1em;
+    }
+    .classynav ul li a {
+      font-size: 13px;
+      padding: 0 10px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .classy-navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      padding: 0.5em 0.5em;
+    }
+    .classy-navbar .nav-brand {
+      margin-bottom: 10px;
+    }
+    .classynav ul {
+      flex-direction: column;
+    }
+    .classynav ul li {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .classynav ul li a {
+      height: auto;
+      line-height: normal;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .classy-navbar {
+      padding: 0.5em;
+    }
+    .classynav ul {
+      display: none;
+    }
+    .classynav ul.show {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .classy-navbar {
+      padding: 0.5em 0.5em;
+    }
+    .classynav ul li a {
+      font-size: 12px;
+      padding: 0 8px;
+    }
+    .classynav ul li ul li a {
+      padding: 0 15px;
+    }
+  }
+  
