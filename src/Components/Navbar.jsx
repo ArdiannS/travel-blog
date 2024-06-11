@@ -50,13 +50,13 @@ function Navbar() {
                   <div className="classynav">
                     <ul>
                       <li>
-                        <a href="index.html">Home</a>
+                        <a href="/">Home</a>
                       </li>
                       <li>
                         <a href="about">About</a>
                       </li>
                       <li>
-                        <a href="services.html">Services</a>
+                        <a href="services">Services</a>
                       </li>
 
                       <li>
