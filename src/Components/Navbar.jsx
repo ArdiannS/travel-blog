@@ -7,9 +7,11 @@ import {
   FaLinkedin,
   FaPinterest,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Logo from "../Assets/rsz_1rsz_logo__1_-removebg-preview.png";
 import "../Styles/Navbar.css";
 import "../Styles/style.css";
-import Logo from "../Assets/rsz_1rsz_logo__1_-removebg-preview.png";
+
 function Navbar() {
   return (
     <div>

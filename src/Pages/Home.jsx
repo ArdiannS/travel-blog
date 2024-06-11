@@ -134,8 +134,8 @@ function Home() {
   return (
     <>
       {isLoading ? (
-        <div className="flex justify-center items-center  h-screen">
-          <h1 className="font-bold text-5xl">
+        <div class="flex justify-center items-center h-screen">
+          <h1 class="font-bold text-5xl">
             <span style={{ textShadow: `0 0 5px #000` }}>{blurredText}</span>
             {loadingText.slice(blurredText.length)}
           </h1>
