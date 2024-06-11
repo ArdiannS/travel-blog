@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
-import img1 from "../Assets/1.jpg";
-import img2 from "../Assets/2.jpg";
-import img3 from "../Assets/3.jpg";
-import img4 from "../Assets/4.jpg";
+import img1 from '../Assets/1.jpg'
+import img2 from '../Assets/2.jpg'
+import img3 from '../Assets/3.jpg'
+import img4 from '../Assets/4.jpg'
 import "../Styles/Home.css";
 import "../Styles/bootstrap.min.css";
 import { FaEye } from "react-icons/fa";
@@ -54,6 +54,7 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showImages, setShowImages] = useState(false);
   const [activeFilter, setActiveFilter] = useState("*");
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -82,6 +83,16 @@ function Home() {
         }
       });
     };
+    const togglePlay = () => {
+      const iframe = document.getElementById('tutorial-video');
+      if (isPlaying) {
+        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      } else {
+        iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
+      setIsPlaying(!isPlaying);
+    };
+  
 
     window.addEventListener("scroll", handleScroll);
 
@@ -152,13 +163,13 @@ function Home() {
           }`}
         >
           <div
-            className="single-catagory bg-img d-flex align-items-center justify-content-center jarallax img3"
+            className="single-catagory bg-img d-flex align-items-center justify-content-center jarallax img3 wow fadeInUp "
             style={{ backgroundImage: `url(${img3})` }}
           >
             <a href="#">Agency</a>
           </div>
           <div
-            className="single-catagory bg-img d-flex align-items-center justify-content-center jarallax img4"
+            className="single-catagory bg-img d-flex align-items-center justify-content-center jarallax img4 wow fadeInUp"
             style={{ backgroundImage: `url(${img4})` }}
           >
             <a href="#">What We Do?</a>
@@ -214,7 +225,7 @@ function Home() {
             className="pixel-projects-menu wow fadeInUp"
             data-wow-delay="200ms"
           >
-            <div className="text-center portfolio-menu">
+            <div className="text-center portfolio-menu " >
               <button
                 className={`btn ${activeFilter === "*" ? "active" : ""}`}
                 onClick={() => handleFilter("*")}
@@ -241,7 +252,9 @@ function Home() {
               </button>
             </div>
           </div>
-          <div className="pixel-portfolio">
+          
+          <div className="pixel-portfolio" style={{ marginBottom: "300px" }}>
+            
             {filteredSlides.map((slide, index) => (
               <div
                 key={slide.id}
@@ -262,7 +275,23 @@ function Home() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: "300px" }}>
+          <div>
+     
+      <div className="video-container wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">
+        <iframe
+          title="tutorial-video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/zFiqZMTmolY"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <div className="overlay"></div>
+        <div className="play-button"></div>
+      </div>
+    </div>
+          <div style={{ marginTop: "50px" }}>
             <Contact />
           </div>
         </div>
