@@ -10,6 +10,7 @@ import {
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import Logo from "../Assets/rsz_1rsz_logo__1_-removebg-preview.png";
 
 function Footer() {
   return (
@@ -20,7 +21,12 @@ function Footer() {
             <div class="col-12 col-sm-6 col-md-3">
               <div class="single-footer-widget mb-100">
                 <a href="index.html" class="footer-logo">
-                  <img src="img/core-img/logo.png" alt="Logo" />
+                  <img
+                    className="mb-30"
+                    src={Logo}
+                    alt="Logo"
+                    style={{ width: "150px", height: "auto" }}
+                  />
                 </a>
               </div>
             </div>

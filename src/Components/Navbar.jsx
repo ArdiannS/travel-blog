@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import "../Styles/Navbar.css";
 import "../Styles/style.css";
+import Logo from "../Assets/rsz_1rsz_logo__1_-removebg-preview.png";
 function Navbar() {
   return (
     <div>
@@ -20,8 +21,17 @@ function Navbar() {
                 className="classy-navbar justify-content-between"
                 id="pixelNav"
               >
-                <a href="index.html" className="nav-brand">
-                  <img src="img/core-img/logo.png" alt="Logo" />
+                <a href="/" className="nav-brand">
+                  <img
+                    className="mb-30"
+                    src={Logo}
+                    alt="Logo"
+                    style={{
+                      width: "150px",
+                      height: "auto",
+                      marginTop: "20px",
+                    }}
+                  />
                 </a>
                 <div className="classy-navbar-toggler">
                   <span className="navbarToggler">

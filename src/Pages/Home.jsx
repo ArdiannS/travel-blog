@@ -193,7 +193,10 @@ function Home() {
           </div>
         </section>
 
-        <div className="pixel-portfolio-area section-padding-100-0" style={{ paddingBottom: "100px" }}>
+        <div
+          className="pixel-portfolio-area section-padding-100-0"
+          style={{ paddingBottom: "100px" }}
+        >
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -234,7 +237,7 @@ function Home() {
                 className={`btn ${activeFilter === "web" ? "active" : ""}`}
                 onClick={() => handleFilter("web")}
               >
-               Views
+                Views
               </button>
             </div>
           </div>
@@ -259,10 +262,11 @@ function Home() {
               </div>
             ))}
           </div>
+          <div style={{ marginTop: "300px" }}>
+            <Contact />
+          </div>
         </div>
       </div>
-      <Contact/>
-
       <Footer />
     </>
   );
