@@ -79,7 +79,6 @@
     background-color: #555;
   }
   
-  /* Scroll animations */
   .hero-area,
   .top-catagory-area,
   .nl-area {
@@ -93,15 +92,25 @@
     opacity: 1;
     transform: translateY(0);
   }
+ 
+  .video-container {
+    width: 80%; /* Adjust this to your preference */
+    height: 300px;
+    margin: 0 auto; /* Center the container */
+    border-radius: 10px;
+    padding-top: 170px;
+    margin-bottom: 240px;
+  }
   
-  /* Adding some animation for the category images */
-  .single-catagory {
+  .video-container iframe {
+    display: block;
     width: 100%;
-    opacity: 0;
+    height: 500px;
+    border: none;
+ 
+   
   }
   
-  .single-catagory.show {
-    animation: slideInUp 0.8s forwards;
-  }
+  
   
   
