@@ -69,20 +69,12 @@ function Navbar() {
                       <a href="#">
                         <FaFacebook />
                       </a>
-                      <a href="#">
-                        <FaDribbble />
-                      </a>
-                      <a href="#">
-                        <FaFlickr />
-                      </a>
+
                       <a href="#">
                         <FaInstagram />
                       </a>
                       <a href="#">
                         <FaLinkedin />
-                      </a>
-                      <a href="#">
-                        <FaPinterest />
                       </a>
                     </div>
                   </div>
