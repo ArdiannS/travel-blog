@@ -243,7 +243,7 @@ function About() {
                     <img src={employee2} alt="" width={400} />
                     <div className="hover-text d-flex align-items-end justify-content-center text-center">
                       <div className="hover--">
-                        <h4>Ardian Sutaj</h4>
+                        <h4>Albin Shabani</h4>
                         <h6>Photographer</h6>
                         <div className="social-info">
                           <a href="#">
