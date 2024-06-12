@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faFacebook,
-  faDribbble,
-  faFlickr,
   faInstagram,
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
@@ -45,11 +43,8 @@ function Footer() {
 
                 <div class="col-sm-4">
                   <div class="single-footer-widget mb-100">
-                    <h5 class="widget-title">Support</h5>
-                    <p>
-                      <FontAwesomeIcon icon={faPhone} />
-                      <br /> +383 041 2293123
-                    </p>
+                   
+                  
                   </div>
                 </div>
 
@@ -59,12 +54,6 @@ function Footer() {
                     <div class="footer-social-info">
                       <a href="#">
                         <FontAwesomeIcon icon={faFacebook} />
-                      </a>
-                      <a href="#">
-                        <FontAwesomeIcon icon={faDribbble} />
-                      </a>
-                      <a href="#">
-                        <FontAwesomeIcon icon={faFlickr} />
                       </a>
                       <a href="#">
                         <FontAwesomeIcon icon={faInstagram} />

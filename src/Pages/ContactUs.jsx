@@ -1,13 +1,15 @@
+
 import React, { useEffect, useState } from "react";
-// Ensure this path is correct
 import { FaStar, FaEnvelope, FaPhone } from "react-icons/fa";
 import img from "../Assets/1.jpg";
 import WOW from "wowjs";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import PixiComponent from "../Components/PixiComponent.js"; // Import PixiComponent
 import "../Styles/animate.css";
 import "../Styles/style.css";
 import axios from "axios";
+
 const ContactUs = () => {
   const [loading, setLoading] = useState(true);
 
@@ -16,13 +18,15 @@ const ContactUs = () => {
       live: false,
     }).init();
   }, []);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // 2 seconds
+    }, 2000);
 
-    return () => clearTimeout(timer); // Cleanup timer
+    return () => clearTimeout(timer);
   }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,8 +62,8 @@ const ContactUs = () => {
   return (
     <>
       {loading ? (
-        <div class="preloader d-flex align-items-center justify-content-center">
-          <div class="lds-ellipsis">
+        <div className="preloader d-flex align-items-center justify-content-center">
+          <div className="lds-ellipsis">
             <div></div>
             <div></div>
             <div></div>
@@ -68,6 +72,7 @@ const ContactUs = () => {
         </div>
       ) : (
         <div>
+          
           <Navbar />
           <section
             className="breadcrumb-area bg-img bg-overlay jarallax"
@@ -94,6 +99,7 @@ const ContactUs = () => {
           </div>
 
           <section className="contact-area section-padding-100-0">
+         
             <div className="container">
               <div className="row">
                 <div className="col-12 col-lg-4">
@@ -102,16 +108,19 @@ const ContactUs = () => {
                       <h2>Where?</h2>
                       <h6>Our Address</h6>
                     </div>
+                    <PixiComponent /> 
 
                     <div className="single-contact-content d-flex ">
                       <div className="icon">
+                     
                         <FaStar aria-hidden="true" />
                       </div>
                       <div className="text">
+           
                         <h6>Address</h6>
                         <p>
-                          1530 Doverfield Ave <br /> Hacienda Heights,
-                          California(CA), 91745{" "}
+                          Prishtina 10000 <br /> Lagjja Ulpiana,
+                          Prishtina(KS), 2024{" "}
                         </p>
                       </div>
                     </div>
@@ -123,7 +132,7 @@ const ContactUs = () => {
                       <div className="text" style={{ marginLeft: "43px" }}>
                         <h6>Email</h6>
                         <p>
-                          office@pixelagency.com <br /> johndoe@pixelagency.com{" "}
+                          office@travel.com <br /> albinsh53@gmail.com{" "}
                         </p>
                       </div>
                     </div>
@@ -135,16 +144,19 @@ const ContactUs = () => {
                       <div className="text" style={{ marginLeft: "90px" }}>
                         <h6>Phone</h6>
                         <p>
-                          +01 251 332 331 <br />
-                          +01 251 132 331
+                          +383 332 331 <br />
+                          +383 132 331
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
+             
 
                 <div className="col-12 col-lg-8">
+                
                   <div className="section-heading">
+               
                     <h2>Get In Touch</h2>
                     <h6>Drop us a few lines</h6>
                   </div>

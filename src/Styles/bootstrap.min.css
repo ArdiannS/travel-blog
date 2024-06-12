@@ -5060,7 +5060,7 @@ input[type=submit].btn-block {
     border-top-right-radius: 0
 }
 
-.mapi {
+.breadcrumb {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -5072,26 +5072,26 @@ input[type=submit].btn-block {
     border-radius: .25rem
 }
 
-.mapi-item+.mapi-item {
+.breadcrumb-item+.breadcrumb-item {
     padding-left: .5rem
 }
 
-.mapi-item+.mapi-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
     display: inline-block;
     padding-right: .5rem;
     color: #6c757d;
     content: "/"
 }
 
-.mapi-item+.mapi-item:hover::before {
+.breadcrumb-item+.breadcrumb-item:hover::before {
     text-decoration: underline
 }
 
-.mapi-item+.mapi-item:hover::before {
+.breadcrumb-item+.breadcrumb-item:hover::before {
     text-decoration: none
 }
 
-.mapi-item.active {
+.breadcrumb-item.active {
     color: #6c757d
 }
 

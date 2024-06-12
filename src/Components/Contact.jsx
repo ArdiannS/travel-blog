@@ -28,7 +28,7 @@ function Contact() {
       .post("https://localhost:7198/api/Contact", formData)
       .then((response) => {
         console.log("Message sent successfully", response);
-        // Clear the form after successful submission
+     
         setFormData({
           name: "",
           email: "",
