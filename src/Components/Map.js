@@ -48,6 +48,7 @@ function Map() {
         { name: "Rupce", x: 980, y: 450 },
       ];
 
+      // Add points to the map
       destinations.forEach((dest) => {
         let point = new PIXI.Graphics();
         point.beginFill(0xff0000);
@@ -61,6 +62,7 @@ function Map() {
         map.addChild(point); // Add points to the map sprite, not app.stage
       });
 
+      // Tooltip for displaying destination info
       let tooltip = new PIXI.Text("", {
         fontFamily: "Arial",
         fontSize: 24,
@@ -70,6 +72,7 @@ function Map() {
       tooltip.visible = false;
       map.addChild(tooltip); // Add tooltip to the map sprite
 
+      // Show tooltip function
       function showTooltip(dest) {
         tooltip.text = dest.name;
         tooltip.x = dest.x + 15;
