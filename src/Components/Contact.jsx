@@ -1,14 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/style.css";
 import "../Styles/animate.css";
 import WOW from "wowjs";
-
+import axios from "axios";
 function Contact() {
   useEffect(() => {
     new WOW.WOW({
       live: false,
     }).init();
   }, []);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .post("https://localhost:7198/api/Contact", formData)
+      .then((response) => {
+        console.log("Message sent successfully", response);
+        // Clear the form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error sending message", error);
+      });
+  };
   return (
     <div>
       {" "}
@@ -28,39 +59,43 @@ function Contact() {
           <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
               <div class="contact-form-area text-center">
-                <form action="#" method="post">
+                <form onSubmit={handleSubmit} action="#" method="post">
                   <input
                     type="text"
                     name="name"
-                    class="form-control wow fadeInUp"
-                    data-wow-delay="100ms"
+                    className="form-control"
                     placeholder="Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                   />
                   <input
                     type="email"
                     name="email"
-                    class="form-control wow fadeInUp"
-                    data-wow-delay="300ms"
+                    className="form-control"
                     placeholder="E-mail"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                   />
                   <input
                     type="text"
                     name="subject"
-                    class="form-control wow fadeInUp"
-                    data-wow-delay="500ms"
+                    className="form-control"
                     placeholder="Subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
                   />
                   <textarea
                     name="message"
-                    class="form-control wow fadeInUp"
-                    data-wow-delay="700ms"
+                    className="form-control"
                     placeholder="Message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                   ></textarea>
-                  <button
-                    type="submit"
-                    class="btn pixel-btn wow fadeInUp"
-                    data-wow-delay="900ms"
-                  >
+                  <button type="submit" className="btn pixel-btn">
                     Send Message
                   </button>
                 </form>
