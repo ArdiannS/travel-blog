@@ -7,6 +7,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import "../Styles/animate.css";
 import "../Styles/style.css";
+import axios from "axios";
 const ContactUs = () => {
   const [loading, setLoading] = useState(true);
 
@@ -22,6 +23,37 @@ const ContactUs = () => {
 
     return () => clearTimeout(timer); // Cleanup timer
   }, []);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formData);
+    try {
+      const response = await axios.post(
+        "https://localhost:7198/api/Contact",
+        formData
+      );
+      console.log("Message sent successfully", response);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending message", error);
+    }
+  };
 
   return (
     <>
@@ -118,29 +150,41 @@ const ContactUs = () => {
                   </div>
 
                   <div className="contact-form-area mb-100">
-                    <form action="#" method="post">
+                    <form onSubmit={handleSubmit}>
                       <input
                         type="text"
                         name="name"
                         className="form-control"
                         placeholder="Name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
                       />
                       <input
                         type="email"
                         name="email"
                         className="form-control"
                         placeholder="E-mail"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
                       />
                       <input
                         type="text"
                         name="subject"
                         className="form-control"
                         placeholder="Subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        required
                       />
                       <textarea
                         name="message"
                         className="form-control"
                         placeholder="Message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
                       ></textarea>
                       <button type="submit" className="btn pixel-btn">
                         Send Message
