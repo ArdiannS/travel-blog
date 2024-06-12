@@ -28,9 +28,9 @@ function About() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // 2 seconds
+    }, 2000); 
 
-    return () => clearTimeout(timer); // Cleanup timer
+    return () => clearTimeout(timer); 
   }, []);
   return (
     <>

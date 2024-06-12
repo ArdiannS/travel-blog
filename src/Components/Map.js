@@ -6,7 +6,6 @@ function Map() {
   const app = useRef(null);
 
   useEffect(() => {
-    // Initialize PixiJS
     app.current = new PIXI.Application({
       width: window.innerWidth,
       height: window.innerHeight,
@@ -59,10 +58,9 @@ function Map() {
         point.interactive = true;
         point.buttonMode = true;
         point.on("pointerdown", () => showTooltip(dest));
-        map.addChild(point); // Add points to the map sprite, not app.stage
+        map.addChild(point);
       });
 
-      // Tooltip for displaying destination info
       let tooltip = new PIXI.Text("", {
         fontFamily: "Arial",
         fontSize: 24,
@@ -70,9 +68,8 @@ function Map() {
         align: "center",
       });
       tooltip.visible = false;
-      map.addChild(tooltip); // Add tooltip to the map sprite
+      map.addChild(tooltip);
 
-      // Show tooltip function
       function showTooltip(dest) {
         tooltip.text = dest.name;
         tooltip.x = dest.x + 15;
@@ -85,21 +82,16 @@ function Map() {
       }
     }
 
-    // Cleanup function to remove PixiJS view on unmount
     return () => {
-      // Check if PixiJS app is initialized
       if (app.current) {
-        // Remove PixiJS view from map container
         mapContainer.removeChild(app.current.view);
 
-        // Destroy PixiJS app and remove event listeners
         app.current.destroy(true, {
           children: true,
           texture: true,
           baseTexture: true,
         });
 
-        // Set the current app to null to ensure it is not used after unmount
         app.current = null;
       }
     };

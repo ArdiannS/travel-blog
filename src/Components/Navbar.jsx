@@ -1,11 +1,8 @@
 import React from "react";
 import {
   FaFacebook,
-  FaDribbble,
-  FaFlickr,
   FaInstagram,
   FaLinkedin,
-  FaPinterest,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Logo from "../Assets/rsz_1rsz_logo__1_-removebg-preview.png";
